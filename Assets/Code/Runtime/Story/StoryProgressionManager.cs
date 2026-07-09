@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using HeavenOrHell.Audio;
 using HeavenOrHell.Cauldron;
+using HeavenOrHell.Dialogue;
 using HeavenOrHell.UI;
 using UnityEngine;
 
@@ -34,6 +35,7 @@ namespace HeavenOrHell.Story
     [SerializeField] private ChapterMusicController musicController;
     [SerializeField] private StoryHudController hudController;
     [SerializeField] private WitnessSummonController witnessPresenter;
+    [SerializeField] private DialogueUiController dialogueController;
 
     private int currentBeatIndex = -1;
     private bool transitionRunning;
@@ -97,6 +99,11 @@ namespace HeavenOrHell.Story
 
         Debug.Log($"StoryProgression: Genug Energie gesammelt — {beat.characterName} wurde befragt.");
         OnCharacterSummoned?.Invoke(beat);
+
+        // Witness speaks: interactive dialogue runs until an end node, then the beat transition continues.
+        var graph = DialogueDatabase.GetGraph(beat.beatId);
+        if (dialogueController != null && graph != null)
+          yield return dialogueController.RunDialogue(graph);
       }
 
       yield return TransitionToBeat(currentBeatIndex + 1);

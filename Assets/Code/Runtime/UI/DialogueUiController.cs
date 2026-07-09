@@ -118,6 +118,10 @@ namespace HeavenOrHell.UI
 
     private void Update()
     {
+      // UI is built lazily on first dialogue; nothing to poll before that.
+      if (rootGroup == null)
+        return;
+
       if (continueButton != null && continueButton.gameObject.activeInHierarchy && Input.GetKeyDown(KeyCode.Space))
         OnContinueClicked();
 
@@ -205,6 +209,10 @@ namespace HeavenOrHell.UI
 
       speakerText = CreateAnchoredText(panel.transform, "Speaker", "Witness", 28, FontStyles.Bold, TextAlignmentOptions.Center, new Vector2(0.05f, 0.8f), new Vector2(0.95f, 0.95f), new Color(0.7f, 0.85f, 1f));
       bodyText = CreateAnchoredText(panel.transform, "Body", "", 31, FontStyles.Normal, TextAlignmentOptions.Center, new Vector2(0.05f, 0.22f), new Vector2(0.95f, 0.78f), Color.white);
+      // Long witness lines shrink to fit the panel instead of spilling out of the FOV.
+      bodyText.enableAutoSizing = true;
+      bodyText.fontSizeMin = 16f;
+      bodyText.fontSizeMax = 31f;
 
       continueButton = CreateAnchoredButton(panel.transform, "ContinueButton", "Continue", new Vector2(0.5f, 0.08f), new Vector2(220f, 50f), OnContinueClicked);
 
@@ -214,6 +222,9 @@ namespace HeavenOrHell.UI
         var index = i;
         choiceButtons[i] = CreateButton(panel.transform, $"Choice{i}", "", new Vector2(24f, y), new Vector2(1102f, 50f), () => OnChoiceClicked(index));
         choiceLabels[i] = choiceButtons[i].GetComponentInChildren<TextMeshProUGUI>();
+        choiceLabels[i].enableAutoSizing = true;
+        choiceLabels[i].fontSizeMin = 14f;
+        choiceLabels[i].fontSizeMax = 22f;
         choiceButtons[i].gameObject.SetActive(false);
       }
 

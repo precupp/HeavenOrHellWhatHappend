@@ -128,6 +128,9 @@ namespace HeavenOrHell.UI
       rootGroup = panel.AddComponent<CanvasGroup>();
 
       promptText = CreateAnchoredText(panel.transform, "Prompt", StoryNarrativeContent.FinalePrompt, 32, FontStyles.Normal, TextAlignmentOptions.Center, new Vector2(0.05f, 0.58f), new Vector2(0.95f, 0.92f));
+      promptText.enableAutoSizing = true;
+      promptText.fontSizeMin = 16f;
+      promptText.fontSizeMax = 32f;
 
       var labels = new[]
       {
@@ -296,14 +299,16 @@ namespace HeavenOrHell.UI
       rect.anchorMin = rect.anchorMax = new Vector2(0f, 1f);
       rect.pivot = new Vector2(0f, 1f);
       rect.anchoredPosition = pos;
-      rect.anchoredPosition = new Vector2(0f, VrHudLayout.MainPanelDownOffset);
       rect.sizeDelta = size;
       var image = go.GetComponent<Image>();
       image.color = new Color(0.12f, 0.16f, 0.24f, 0.95f);
       var button = go.GetComponent<Button>();
       button.targetGraphic = image;
       button.onClick.AddListener(onClick);
-      CreateText(go.transform, "Label", label, 26, FontStyles.Normal, TextAlignmentOptions.MidlineLeft, new Vector2(14f, 0f), new Vector2(size.x - 24f, size.y));
+      var labelText = CreateText(go.transform, "Label", label, 26, FontStyles.Normal, TextAlignmentOptions.MidlineLeft, new Vector2(14f, 0f), new Vector2(size.x - 24f, size.y));
+      labelText.enableAutoSizing = true;
+      labelText.fontSizeMin = 14f;
+      labelText.fontSizeMax = 26f;
       return button;
     }
   }

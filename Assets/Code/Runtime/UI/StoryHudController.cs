@@ -240,6 +240,10 @@ namespace HeavenOrHell.UI
       var text = go.GetComponent<TextMeshProUGUI>();
       text.text = content;
       text.fontSize = fontSize;
+      // Long narrative/ending strings shrink to fit the panel instead of overflowing the FOV.
+      text.enableAutoSizing = true;
+      text.fontSizeMin = 14f;
+      text.fontSizeMax = fontSize;
       text.fontStyle = style;
       text.alignment = TextAlignmentOptions.Center;
       text.enableWordWrapping = true;
