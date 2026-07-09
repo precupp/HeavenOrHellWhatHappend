@@ -1,0 +1,20 @@
+{
+    "name": "HeavenOrHell.Runtime",
+    "rootNamespace": "HeavenOrHell",
+    "references": [
+        "Unity.XR.Interaction.Toolkit",
+        "Unity.InputSystem",
+        "Unity.TextMeshPro",
+        "Unity.XR.CoreUtils",
+        "Unity.ugui"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

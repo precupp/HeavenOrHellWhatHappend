@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af6683ac8b31eae44bb039fc51dd8a80, type: 3}
+  m_Name: ChapterItemPool_Hell
+  m_EditorClassIdentifier: 
+  chapterId: hell
+  itemPrefabs:
+  - {fileID: 6826374412023926560, guid: ce25e3be688eb7446a8c9e388e562547, type: 3}
+  - {fileID: 4851878268660774484, guid: fb51a790d92992f4ea51a860d3260e6c, type: 3}
+  - {fileID: 957936619745866746, guid: c45e9e99bac597e41b37d3f138318f6b, type: 3}
+  - {fileID: 1267516393175351817, guid: 9a1fd1f5d0f121641ad9a9b6d6479f13, type: 3}
+  itemsPerRound: 4

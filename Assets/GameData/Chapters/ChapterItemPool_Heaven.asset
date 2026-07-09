@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af6683ac8b31eae44bb039fc51dd8a80, type: 3}
+  m_Name: ChapterItemPool_Heaven
+  m_EditorClassIdentifier: 
+  chapterId: heaven
+  itemPrefabs:
+  - {fileID: 2795966973868296856, guid: fc7b3c20b30ca2d4abe50b4bcce8bc7c, type: 3}
+  - {fileID: 8529817174241565283, guid: b209f651041193b41b7bdded3975358b, type: 3}
+  - {fileID: 1220388175202920015, guid: cb8b000980f22964bb74b5f9559b5b62, type: 3}
+  - {fileID: 3324337628250479306, guid: a43426bc7fa7b304a98841a3c2583d91, type: 3}
+  itemsPerRound: 4
